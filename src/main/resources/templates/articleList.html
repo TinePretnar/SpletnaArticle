@@ -4,6 +4,12 @@
     <title>All Articles</title>
 </head>
 <body>
+<base href="/">
+<app-root></app-root>
+<script src="../../runtime.eb2a6520f94eb5c9.js" type="module"></script>
+<script src="../../polyfills.e4b73a5d8a11cab2.js" type="module"></script>
+<script src="../../main.7de21c77bbdc6702.js" type="module"></script>
+
 <h1>All Articles</h1>
 
 <div>
@@ -29,11 +35,3 @@
 </table>
 </body>
 </html>
-
-<script>
-    sortArticlesByDate() {
-  this.articles.sort((a, b) => {
-    return new Date(a.date).getTime() - new Date(b.date).getTime();
-  });
-}
-</script>
