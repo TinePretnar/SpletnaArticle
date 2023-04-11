@@ -10,6 +10,9 @@ sourceCompatibility = '17'
 
 repositories {
 	mavenCentral()
+	maven {
+		url "https://repo.spring.io/webjars"
+	}
 }
 
 dependencies {
@@ -18,6 +21,9 @@ dependencies {
 	implementation 'nl.tritales.springrestdoc:springrestdoc:0.1.0'
 	implementation 'org.springframework.boot:spring-boot-starter-web'
 	implementation 'org.springframework.boot:spring-boot-starter-thymeleaf'
+	implementation 'org.webjars:webjars-locator-core'
+	implementation 'org.webjars:angularjs:1.8.2'
+	implementation 'org.webjars:angular-ui-router:1.0.30'
 	testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
 }
