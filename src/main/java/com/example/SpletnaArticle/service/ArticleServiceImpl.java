@@ -13,35 +13,39 @@ public class ArticleServiceImpl implements ArticleService {
     private static int nextId = 1;
 
     static {
-        Article article1 = new Article(nextId++, "", "", "", LocalDate.now(),"");
+        Article article1 = new Article(nextId++, "", "", "", LocalDate.now(), LocalDate.now(),"");
         article1.setTitle("First Article");
         article1.setSubtitle("First subtitle");
         article1.setContent("This is the content of the first article.");
-        article1.setDate(LocalDate.of(2017, 10, 8));
+        article1.setPublishedDate(LocalDate.of(2017, 10, 8));
+        article1.setCreatedDate(LocalDate.of(2018, 10, 8));
         article1.setAuthor("Tone Cvetek");
         articleMap.put(article1.getId(), article1);
 
-        Article article2 = new Article(nextId++, "", "", "", LocalDate.now(),"");
+        Article article2 = new Article(nextId++, "", "", "", LocalDate.now(), LocalDate.now(),"");
         article2.setTitle("Second Article");
         article2.setSubtitle("Second subtitle");
         article2.setContent("This is the content of the second article.");
-        article2.setDate(LocalDate.of(2019, 10, 8));
+        article2.setPublishedDate(LocalDate.of(2019, 10, 8));
+        article2.setCreatedDate(LocalDate.of(2020, 10, 8));
         article2.setAuthor("Marija Cvetek");
         articleMap.put(article2.getId(), article2);
 
-        Article article3 = new Article(nextId++, "", "", "", LocalDate.now(),"");
+        Article article3 = new Article(nextId++, "", "", "", LocalDate.now(), LocalDate.now(),"");
         article3.setTitle("Third Article");
         article3.setSubtitle("Third subtitle");
         article3.setContent("This is the content of the third article.");
-        article3.setDate(LocalDate.of(2019, 10, 15));
+        article3.setPublishedDate(LocalDate.of(2019, 10, 15));
+        article3.setCreatedDate(LocalDate.of(2021, 10, 8));
         article3.setAuthor("Marija Oblak");
         articleMap.put(article3.getId(), article3);
 
-        Article article4 = new Article(nextId++, "", "", "", LocalDate.now(),"");
+        Article article4 = new Article(nextId++, "", "", "", LocalDate.now(),LocalDate.now(),"");
         article4.setTitle("Fourth Article");
         article4.setSubtitle("Fourth subtitle");
         article4.setContent("This is the content of the Fourth article.");
-        article4.setDate(LocalDate.of(2019, 7, 8));
+        article4.setPublishedDate(LocalDate.of(2019, 7, 8));
+        article4.setCreatedDate(LocalDate.of(2022, 10, 8));
         article4.setAuthor("Ana Guzelj");
         articleMap.put(article4.getId(), article4);
     }

@@ -1,0 +1,10 @@
+<!doctype html>
+<div class="article-list">
+  <div class="article" *ngFor="let article of articles">
+    <h2><a routerLink="/articles/{{ article.id }}">{{ article.title }}</a></h2>
+    <h3>{{ article.subtitle }}</h3>
+    <p>Published: {{ article.publishedDate }}</p>
+    <p>Created: {{ article.createdDate }}</p>
+    <p>Author: {{ article.author }}</p>
+  </div>
+</div>

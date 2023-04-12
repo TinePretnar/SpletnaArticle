@@ -1,0 +1,26 @@
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+.article-list-container {
+  width: 600px;
+  padding: 20px;
+  background-color: #B266FF;
+  text-align: center;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+}
+
+.center {
+  text-align: center;
+}
+
+
+
+
+
+
+

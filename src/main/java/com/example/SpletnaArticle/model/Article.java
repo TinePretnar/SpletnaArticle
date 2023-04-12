@@ -7,16 +7,19 @@ public class Article {
     private int id;
     private String title;
     private String content;
-    private LocalDate date;
+    private LocalDate publishedDate;
+
+    private LocalDate createdDate;
     private String author;
     private String subtitle;
 
-    public Article(int id, String title, String subtitle, String content, LocalDate date, String author) {
+    public Article(int id, String title, String subtitle, String content, LocalDate publishedDate, LocalDate createdDate, String author) {
         this.id = id;
         this.title = title;
         this.subtitle = subtitle;
         this.content = content;
-        this.date = date;
+        this.publishedDate = publishedDate;
+        this.createdDate = createdDate;
         this.author = author;
     }
 
@@ -44,12 +47,20 @@ public class Article {
         this.content = content;
     }
 
-    public LocalDate getDate() {
-        return date;
+    public LocalDate getPublishedDate() {
+        return publishedDate;
     }
 
-    public void setDate(LocalDate date) {
-        this.date = date;
+    public void setPublishedDate(LocalDate date) {
+        this.publishedDate = date;
+    }
+
+    public LocalDate getCreatedDate() {
+        return createdDate;
+    }
+
+    public void setCreatedDate(LocalDate date) {
+        this.createdDate = date;
     }
 
     public String getAuthor() {

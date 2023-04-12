@@ -1,6 +1,7 @@
 package com.example.SpletnaArticle;
 import com.example.SpletnaArticle.model.Article;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 import java.util.List;
 import com.example.SpletnaArticle.service.ArticleService;
@@ -11,37 +12,26 @@ import org.springframework.web.bind.annotation.RestController;
 
 
 @RestController
-@RequestMapping("/")
+@RequestMapping("/api")
+@CrossOrigin(origins = "http://localhost:4200")
 public class ArticleController {
 
     @Autowired
     private  ArticleService articleService;
-    @GetMapping
-    public ModelAndView getAllArticles() {
-        List<Article> articles = articleService.getAllArticles();
-        ModelAndView modelAndView = new ModelAndView();
-        modelAndView.addObject("articles", articles);
-        modelAndView.setViewName("index");
-        return modelAndView;
+    @GetMapping("/articles")
+    public List<Article> getAllArticles() {
+        return articleService.getAllArticles();
     }
 
-    @GetMapping("/{id}")
-    public String getArticleById(@PathVariable int id) {
-        return "Article with ID " + id;
-    }
-
-    /*@GetMapping("/{filename:.+}")
-    public ResponseEntity<Resource> serveFile(@PathVariable String filename) {
-        Resource file = new ClassPathResource(filename);
-        if (file.exists()) {
-            return ResponseEntity.ok()
-                    .header(HttpHeaders.CONTENT_DISPOSITION, "inline; filename=\"" + file.getFilename() + "\"")
-                    .contentType(MediaTypeFactory.getMediaType(file).orElse(MediaType.APPLICATION_OCTET_STREAM))
-                    .body(file);
+    @GetMapping("/articles/{id}")
+    public ResponseEntity<Article> getArticleById(@PathVariable int id) {
+        Article article = articleService.getArticleById(id);
+        if (article != null) {
+            return ResponseEntity.ok(article);
         } else {
             return ResponseEntity.notFound().build();
         }
-    }*/
+    }
 
     @PostMapping
     public String createArticle(@RequestBody Article article) {
